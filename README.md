@@ -38,10 +38,10 @@ To do..
 
 Reach out to us at:-
 
-[Brendon]
-[Job]
-[Nikhil-Mudgal](https://github.com/Nikhil-Mudgal) -- nmudgal1106@gmail.com
-[Parth]
-[Renat]
+`[Brendon]
+`[Job]
+`[Nikhil-Mudgal](https://github.com/Nikhil-Mudgal) -- nmudgal1106@gmail.com
+`[Parth]
+`[Renat]
 
 
