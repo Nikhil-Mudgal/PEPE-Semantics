@@ -1,0 +1,3 @@
+# TODO: relax requirements
+gdown==4.5.1
+transformers==4.21.3
