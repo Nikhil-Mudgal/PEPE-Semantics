@@ -1,0 +1,5 @@
+[project]
+name = "pepe-semantics"
+version = "0.0.1"
+description = "PEPE-Sematics is the productionized version of the PEPE-Model by Xingyao Wang and David Jurgens."
+requires-python = ">=3.7"
