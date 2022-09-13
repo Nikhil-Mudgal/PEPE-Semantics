@@ -1,5 +1,4 @@
 import csv
-import hashlib
 import pickle
 from ast import literal_eval
 from pathlib import Path
