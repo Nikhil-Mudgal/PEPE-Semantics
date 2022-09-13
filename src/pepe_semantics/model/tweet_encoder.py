@@ -2,7 +2,8 @@ import torch
 import torch.nn as nn
 from transformers import AutoModel
 
-TEXT_ENCODER_MODEL_NAME = 'vinai/bertweet-base'
+TEXT_ENCODER_MODEL_NAME = "vinai/bertweet-base"
+
 
 class TweetEncoder(nn.Module):
     def __init__(self, output_dim=512):

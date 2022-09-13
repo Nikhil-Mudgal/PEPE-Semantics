@@ -1,11 +1,11 @@
 import csv
 import hashlib
 import pickle
-from pathlib import Path
 from ast import literal_eval
+from pathlib import Path
 
-import numpy as np
 import faiss
+import numpy as np
 
 _INDEX_FNAME = "index"
 _GIPHY_IDS_FNAME = "giphy_ids.pkl"
@@ -26,14 +26,14 @@ class GIFIndex:
         emb_dim = embeddings.shape[1]
         # TODO: can add optimizations like HNSW search here
         self._index = faiss.IndexFlatIP(emb_dim)
-        self._index.add(embeddings.astype('float32'))
+        self._index.add(embeddings.astype("float32"))
 
     def _get_nearest_ids(self, text_embedding, k=5):
         # TODO: pre-check if already unsqueezed
         text_embedding = np.expand_dims(text_embedding, 0)
         _, ids = self._index.search(text_embedding, k)
         return np.squeeze(ids)
-    
+
     def get_giphy_links(self, text_embedding, k=5):
         ids = self._get_nearest_ids(text_embedding, k)
         giphy_ids = [self._giphy_ids[id_] for id_ in ids]
@@ -77,6 +77,7 @@ def read_csv_file(csv_file):
         for row in reader:
             yield row
 
+
 def load_giphy_ids(save_dir):
     with open(save_dir / _GIPHY_IDS_FNAME, "rb") as fin:
         giphy_ids = pickle.load(fin)
@@ -89,7 +90,7 @@ def load_index(save_dir):
 
 def read_gif_to_giphy_ids(gif_ids_mapping_path):
     gif_ids, giphy_ids = zip(*[el for el in read_csv_file(gif_ids_mapping_path)])
-    return {gif_id:giphy_id for gif_id, giphy_id in zip(gif_ids, giphy_ids)}
+    return {gif_id: giphy_id for gif_id, giphy_id in zip(gif_ids, giphy_ids)}
 
 
 def create_giphy_link(giphy_id):

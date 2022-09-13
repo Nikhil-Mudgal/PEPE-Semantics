@@ -12,16 +12,22 @@ INDICES_FOLDER = EXTERNAL_FILES_FOLDER / "index"
 
 # INFERENCE MODEL
 # resaved them separately from full PEPE model
-BERTWEET_WEIGHTS_PATHS = \
-    "1cxLrHoLe2R2c5mxrXtn6zres-kEybnML", MODELS_FOLDER / "bertweet_weights.pth"
+BERTWEET_WEIGHTS_PATHS = (
+    "1cxLrHoLe2R2c5mxrXtn6zres-kEybnML",
+    MODELS_FOLDER / "bertweet_weights.pth",
+)
 
 # DATA
-GIF_ID_TO_INFERRED_FEATURE_PATHS = \
-    "15jTsnN6cYIf2KBcJ85Km_xH2pjH8HILN", FEATURES_FOLDER/ "gif_id_to_feature.csv"  # 1k sample
+GIF_ID_TO_INFERRED_FEATURE_PATHS = (
+    "15jTsnN6cYIf2KBcJ85Km_xH2pjH8HILN",
+    FEATURES_FOLDER / "gif_id_to_feature.csv",
+)  # 1k sample
 # GIF_ID_TO_INFERRED_FEATURE_PATHS = \
 # "1GClR5KLOsYAgYSS3iKP1k6-qcynR7d7g", FEATURES_FOLDER/"gif_id_to_feature.csv"  # full 115K dataset
-GIF_ID_TO_GIPHY_ID_PATHS = \
-    "1OBEWu4RKkLciwtDnR0ecVqbjCPU9cVG7", FEATURES_FOLDER/"gif_id_to_giphy_id.csv"
+GIF_ID_TO_GIPHY_ID_PATHS = (
+    "1OBEWu4RKkLciwtDnR0ecVqbjCPU9cVG7",
+    FEATURES_FOLDER / "gif_id_to_giphy_id.csv",
+)
 
 
 # WHERE TO SAVE OUR BUILT INDEX

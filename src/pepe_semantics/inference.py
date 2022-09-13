@@ -2,8 +2,10 @@ import torch
 from transformers import AutoTokenizer
 
 from pepe_semantics.config import BERTWEET_WEIGHTS_PATHS, INDEX_DIR
-from pepe_semantics.model.tweet_encoder import TweetEncoder, TEXT_ENCODER_MODEL_NAME
 from pepe_semantics.model.index import GIFIndex
+from pepe_semantics.model.tweet_encoder import (TEXT_ENCODER_MODEL_NAME,
+                                                TweetEncoder)
+
 
 class InferenceModel:
     # TODO: add moving to cuda if available: weights and inputs
@@ -24,7 +26,7 @@ def get_giphy_links(
     input_text,
     k=5,
     index_dir=INDEX_DIR,
-    bertweet_weights_fpath=BERTWEET_WEIGHTS_PATHS[1]
+    bertweet_weights_fpath=BERTWEET_WEIGHTS_PATHS[1],
 ):
     model = InferenceModel(bertweet_weights_fpath)
     index = GIFIndex.load(index_dir)
