@@ -33,6 +33,9 @@ To do..
 
 ## Models
 
+### Inference example 
+- Local: run `notebooks/retrieve_gifs.ipynb`
+- Colab (same as local, just with git clone): [link](https://colab.research.google.com/drive/1wDCRnv8ohWk32JxgRC3Qh4BX9ecfs2_H?usp=sharing)
 
 ## Contributors 
 
