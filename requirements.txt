@@ -4,3 +4,6 @@ torch
 numpy
 faiss-cpu
 transformers
+gdown==4.5.1
+
+
