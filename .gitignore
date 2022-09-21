@@ -1,7 +1,7 @@
 # Data files
-pepe_semantics/features/
-pepe_semantics/index/
-pepe_semantics/model/bertweet_weights.pth
+src/pepe_semantics/features/
+src/pepe_semantics/index/
+src/pepe_semantics/model/bertweet_weights.pth
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
