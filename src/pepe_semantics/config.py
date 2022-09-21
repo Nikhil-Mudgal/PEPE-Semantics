@@ -3,7 +3,8 @@ from pathlib import Path
 # better to save to /var or /opt, but permissions are needed for that
 # temporarily saving to installed package location
 
-EXTERNAL_FILES_FOLDER = Path(__file__).resolve().parent
+#EXTERNAL_FILES_FOLDER = Path(__file__).resolve().parent
+EXTERNAL_FILES_FOLDER = Path("/app/src/pepe_semantics/")
 #EXTERNAL_FILES_FOLDER = Path("/Users/jobquiroz/OneDrive/MachineLearningHero/PEPE/PEPE-semantics/pepe_semantics")
 MODELS_FOLDER = EXTERNAL_FILES_FOLDER / "model"
 FEATURES_FOLDER = EXTERNAL_FILES_FOLDER / "features"
