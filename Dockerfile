@@ -6,7 +6,10 @@ FROM python:3.7-slim-buster
 # Copy local code to the container image.
 ENV APP_HOME /app
 WORKDIR $APP_HOME
-COPY . ./
+#COPY . ./
+COPY pepe_semantics/ ./pepe_semantics
+COPY main.py ./main.py
+COPY requirements.txt ./requirements.txt
 
 # Install production dependencies.
 #RUN pip install Flask gunicorn
@@ -18,5 +21,5 @@ RUN pip install gunicorn
 # For environments with multiple CPU cores, increase the number of workers
 # to be equal to the cores available.
 # Timeout is set to 0 to disable the timeouts of the workers to allow Cloud Run to handle instance scaling.
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
-#CMD exec gunicorn --bind :8080 --workers 1 --threads 8 --timeout 0 main:app
+#CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
+CMD exec gunicorn --bind :8080 --workers 1 --threads 8 --timeout 0 main:app
