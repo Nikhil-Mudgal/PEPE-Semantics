@@ -7,9 +7,11 @@ from pepe_semantics.model.index import GIFIndex
 
 app = Flask(__name__)
 
-_INDEX = GIFIndex.load(Path(config.INDEX_DIR))
+#_INDEX = GIFIndex.load(Path(config.INDEX_DIR))
+_INDEX = GIFIndex.load(Path('/app/src/pepe_semantics/index/pepe_index/'))
 
-_MODEL = InferenceModel(Path(config.BERTWEET_WEIGHTS_PATHS[1]))
+#_MODEL = InferenceModel(Path(config.BERTWEET_WEIGHTS_PATHS[1]))
+_MODEL = InferenceModel(Path('/app/src/pepe_semantics/model/bertweet_weights.pth'))
 
 def get_giphy_links(input_text, k = 5):
     """Get's giphy_id to the closest gif found"""
