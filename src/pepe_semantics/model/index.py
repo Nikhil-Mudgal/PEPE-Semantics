@@ -9,7 +9,6 @@ import numpy as np
 _INDEX_FNAME = "index"
 _GIPHY_IDS_FNAME = "giphy_ids.pkl"
 
-
 class GIFIndex:
     def __init__(self, giphy_ids, embeddings=None, index=None):
         if index is None and embeddings is None:
@@ -94,4 +93,4 @@ def read_gif_to_giphy_ids(gif_ids_mapping_path):
 
 def create_giphy_link(giphy_id):
     # TODO: maybe change the link - seems to work only for embedded
-    return f"https://media.giphy.com/media/{giphy_id}/giphy.mp4"
+    return f"https://media.giphy.com/media/{giphy_id}/giphy.gif"

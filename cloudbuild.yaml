@@ -1,0 +1,6 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  #args: ['build', '-t', 'us-central1-docker.pkg.dev/diesel-nova-327205/pepe-semantics/pepe-build-yaml:dev', '.']
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$REVISION_ID:$TAG_NAME', '.']
+#images: ['us-central1-docker.pkg.dev/diesel-nova-327205/pepe-semantics/pepe-build-yaml:dev']
+images: ['us-central1-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$REVISION_ID:$TAG_NAME']
