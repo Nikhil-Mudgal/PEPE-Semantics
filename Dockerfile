@@ -13,7 +13,7 @@ COPY . ./
 #COPY requirements.txt ./requirements.txt
 
 # Install production dependencies.
-RUN pip -qq install .
+RUN pip -qq install .   
 RUN python scripts/gif_scripts/download_data.py
 RUN python scripts/gif_scripts/build_indices.py
 
