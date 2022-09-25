@@ -22,4 +22,4 @@ REPOSITORY_NAME=pepe-semantics
 gcloud builds submit --config=cloudbuild.yaml --substitutions=REPO_NAME=$REPOSITORY_NAME,TAG_NAME=$TAG,REVISION_ID=$IMAGE_NAME
 
 # Deploy
-gcloud run deploy $APP_NAME --image us-central1-docker.pkg.dev/$PROJECT_ID/$REPOSITORY_NAME/$IMAGE_NAME:$TAG --region=us-central1 --allow-unauthenticated
+gcloud run deploy $APP_NAME --image us-central1-docker.pkg.dev/$PROJECT_ID/$REPOSITORY_NAME/$IMAGE_NAME:$TAG --region=us-central1 --allow-unauthenticated --memory=4Gi
