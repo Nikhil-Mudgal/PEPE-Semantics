@@ -37,6 +37,50 @@ To do..
 - Local: run `notebooks/retrieve_gifs.ipynb`
 - Colab (same as local, just with git clone): [link](https://colab.research.google.com/drive/1wDCRnv8ohWk32JxgRC3Qh4BX9ecfs2_H?usp=sharing)
 
+## Deployment
+
+The model will be deployed into as a web service in GCP (Cloud Run), which will be used as the backend of the web application (Gradio). 
+
+Cloud Run is a service for creating web endpoints from Docker Containers. The elements required to use this service are: 
+
+1. A source code with the functions for inference.
+    - In the case of our project it is the `scripts` and `src` folders as well as the `main.py` file. 
+    - The `scripts` folder contains python modules to download the artifact's model (weights) as well as pre-computed gif embeddings (vector representations of images). 
+    - The `src` folder defines how the model is actually used during inference, as well as a `config.py` file that is actually used by files within `scripts`
+    - The `main.py` file is a basic Flask API. In the GET method it returns a simple sentence, and with POST method it receives a sentence (string) and produces a gif URL.
+2. A `Dockerfile`
+    - Where we define the essential elements for the application to work.
+    - It is worth mention, that we follow the same steps shown in the colab notebook (see above), that is
+        - first we pip install requirements,
+        - install the local package for inference (in `src`),
+        - download model artifacts, data for indexation of images, and build the index with FAIS
+        - and finally, we run the Flask application
+3. Additional files
+    - `requirements.txt` for env setup
+    - `setup.py` to install custom package (`pepe_semantics` defined in `src`)
+    - Ignore files:
+        - `.gitignore` to control tracking some files
+        - `.dockerignore` so the docker container doesn't contain useless files
+        - `.gcloudignore` so useless files are not uploaded to GCP Run
+
+### Manual deployment
+
+1. Clone this repository in local environment or within the provided GCP Shell (easier)
+2. CD into the directory
+3. Create a GCP Artifact repository. This step should be done onlye ONCE:
+    - `gcloud artifacts repositories create <REPOSITORY_NAME> --repository-format=docker --location=us-central1 --description="Docker repository"`
+    - e.g. `gcloud artifacts repositories create pepe-semantics --repository-format=docker --location=us-central1 --description="Docker repository"`
+4. Run the bash script: `gcp_deploy.sh`
+    - `sh ./gcp_deploy.sh [APP_NAME] [IMAGE_NAME] [TAG]`
+    - e.g. `sh ./gcp_deploy.sh pepe-semantics pepe-semantics-rev1 dev`
+
+Once this is done we can go to Cloud Run console and verify the service is up and running. It can take some time until the service gets in-service, we can see the state of the container in Cloud Run -> Logs
+
+
+
+## Continuous deployment
+
+
 ## Contributors 
 
 Reach out to us at:-

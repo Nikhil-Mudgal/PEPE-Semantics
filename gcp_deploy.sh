@@ -2,7 +2,7 @@
 
 if test "$#" -ne 3; then
    echo "Usage: ./gcp_deploy.sh app_name image_name tag"
-   echo "   eg: ./gcp_deploy.sh pepe_semantics pepe_sem_faster dev"
+   echo "   eg: ./gcp_deploy.sh pepe-semantics pepe-semantics-rev-1 dev"
    exit
 fi
 
