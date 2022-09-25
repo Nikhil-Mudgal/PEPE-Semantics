@@ -74,11 +74,20 @@ Cloud Run is a service for creating web endpoints from Docker Containers. The el
     - `sh ./gcp_deploy.sh [APP_NAME] [IMAGE_NAME] [TAG]`
     - e.g. `sh ./gcp_deploy.sh pepe-semantics pepe-semantics-rev1 dev`
 
-Once this is done we can go to Cloud Run console and verify the service is up and running. It can take some time until the service gets in-service, we can see the state of the container in Cloud Run -> Logs
+Once this is done we can go to Cloud Run console and verify the service is up and running. It can take some time until the service gets in-service, we can see the state of the container in Cloud Run -> Logs.
 
+For more information for how this setup came to be, see: 
 
+[YouTube video](https://www.youtube.com/watch?v=FPFDg5znLTM&list=PLY91jl6VVD7wLP84OUgmjGSUBbem92KHk&index=3&ab_channel=FedericoTartarini)
 
-## Continuous deployment
+### Continuous Deployment
+
+To implement Continuous Deployment in GCP we can use GitHub actions to trigger a similar set of commands as the ones above but managed by a GitHub instance.
+
+The instructions followed to setup GitHub actions are shown here:
+
+[YouTube video](https://www.youtube.com/watch?v=NCa0RTSUEFQ&list=PLY91jl6VVD7wLP84OUgmjGSUBbem92KHk&index=8&ab_channel=FedericoTartarini)
+
 
 
 ## Contributors 
