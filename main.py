@@ -27,7 +27,7 @@ def predict():
 
 @app.route("/")
 def hello_world():
-    return "Pepe semantics"
+    return "Pepe semantics CD"
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
