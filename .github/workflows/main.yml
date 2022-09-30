@@ -3,7 +3,7 @@ name: Deploy to Cloud Run
 on:
   push:
     branches:
-      - ${CI_COMMIT_REF_SLUG}
+      - prod
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   APP_ID: pepe-semantics
