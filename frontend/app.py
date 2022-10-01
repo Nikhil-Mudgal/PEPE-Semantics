@@ -1,7 +1,8 @@
 import gradio as gr
 import requests
 
-SERVERLESS_URL = 'https://pepe-semantics-vdn32ryg7q-uc.a.run.app/predict'
+# SERVERLESS_URL = 'https://pepe-semantics-vdn32ryg7q-uc.a.run.app/predict' #NON-Continuously Integrated
+SERVERLESS_URL = 'https://pepe-semantics-w7jf4plb2a-uc.a.run.app/predict'
 
 def predict(text):
     r = requests.post(SERVERLESS_URL, json = {'text':text})
@@ -38,4 +39,4 @@ with gr.Blocks() as demo:
     image2_flag.click(lambda *args: callback.flag(args), [text_input, image2], None, preprocess=False)
     
 
-demo.launch(debug=False)
+demo.launch(debug=False, share=True)
