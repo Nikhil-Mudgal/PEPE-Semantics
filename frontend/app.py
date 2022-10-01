@@ -10,6 +10,8 @@ def predict(text):
     top = links[:2]
     return top
 
+callback = gr.CSVLogger()
+
 with gr.Blocks() as demo:
     text_input = gr.Textbox(label="Input")
     with gr.Row():
@@ -28,6 +30,12 @@ with gr.Blocks() as demo:
         image2_down = gr.Button("Down")
         image2_flag = gr.Button("Flag")
 
+    callback.setup([text_input, image1], "flagged_data", )
+
     submit_button.click(predict, inputs=text_input, outputs=[image1, image2])
 
-demo.launch(debug=False, share=True)
+    image1_flag.click(lambda *args: callback.flag(args), [text_input, image1], None, preprocess=False)
+    image2_flag.click(lambda *args: callback.flag(args), [text_input, image2], None, preprocess=False)
+    
+
+demo.launch(debug=False)
