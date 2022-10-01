@@ -1,7 +1,8 @@
 import gradio as gr
 import requests
 
-SERVERLESS_URL = 'https://pepe-semantics-vdn32ryg7q-uc.a.run.app/predict'
+# SERVERLESS_URL = 'https://pepe-semantics-vdn32ryg7q-uc.a.run.app/predict' #NON-Continuously Integrated
+SERVERLESS_URL = 'https://pepe-semantics-w7jf4plb2a-uc.a.run.app/predict'
 
 def predict(text):
     r = requests.post(SERVERLESS_URL, json = {'text':text})
@@ -9,6 +10,8 @@ def predict(text):
     links = eval(dic['result'])
     top = links[:2]
     return top
+
+callback = gr.CSVLogger()
 
 with gr.Blocks() as demo:
     text_input = gr.Textbox(label="Input")
@@ -28,6 +31,12 @@ with gr.Blocks() as demo:
         image2_down = gr.Button("Down")
         image2_flag = gr.Button("Flag")
 
+    callback.setup([text_input, image1], "flagged_data", )
+
     submit_button.click(predict, inputs=text_input, outputs=[image1, image2])
+
+    image1_flag.click(lambda *args: callback.flag(args), [text_input, image1], None, preprocess=False)
+    image2_flag.click(lambda *args: callback.flag(args), [text_input, image2], None, preprocess=False)
+    
 
 demo.launch(debug=False, share=True)

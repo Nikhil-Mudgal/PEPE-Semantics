@@ -88,13 +88,23 @@ The instructions followed to setup GitHub actions are shown here:
 
 [YouTube video](https://www.youtube.com/watch?v=NCa0RTSUEFQ&list=PLY91jl6VVD7wLP84OUgmjGSUBbem92KHk&index=8&ab_channel=FedericoTartarini)
 
+### Frontend Deployment
 
+Setup: For now, simply install gradio using the command:
+    -`pip install gradio`
+
+To Launch frontend:
+    -`python3 frontend/app.py`
+
+### Flagging/Feedback
+
+Flagging/Feedback is stored in .csv format in the flagged_data/ directory
 
 ## Contributors 
 
 Reach out to us at:-
 
-* [Brendon]
+* [Brenton] -- brentondoing@gmail.com
 * [Job]
 * [Nikhil-Mudgal](https://github.com/Nikhil-Mudgal) -- nmudgal1106@gmail.com
 * [Parth]
