@@ -21,8 +21,8 @@ def upload_blob(bucket_name, source_file_name, destination_blob_name):
         f"File {source_file_name} uploaded to {destination_blob_name}."
     )
 
-    blob.download_to_filename("README-download.md")
+    blob.download_to_filename("text-download.txt")
 
     print('File downloaded again..')
 
-upload_blob("pepe-semantics-artif", "README.md", "README-bucket.md")
+upload_blob("pepe-semantics-artif", "text.txt", "text-bucket.txt")
