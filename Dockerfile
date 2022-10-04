@@ -14,6 +14,7 @@ COPY . ./
 
 # Install production dependencies.
 RUN pip -qq install .   
+RUN python scripts/gcp_buckets.py
 RUN python scripts/gif_scripts/download_data.py
 RUN python scripts/gif_scripts/build_indices.py
 

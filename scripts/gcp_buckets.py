@@ -23,4 +23,6 @@ def upload_blob(bucket_name, source_file_name, destination_blob_name):
 
     blob.download_to_filename("README-download.md")
 
+    print('File downloaded again..')
+
 upload_blob("pepe-semantics-artif", "README.md", "README-bucket.md")

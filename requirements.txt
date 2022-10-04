@@ -5,5 +5,4 @@ numpy
 faiss-cpu
 transformers
 gdown==4.5.1
-
-
+google-cloud-storage
