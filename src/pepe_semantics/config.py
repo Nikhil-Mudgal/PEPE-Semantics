@@ -22,6 +22,7 @@ BERTWEET_WEIGHTS_PATHS = (
 # DATA
 GIF_ID_TO_INFERRED_FEATURE_PATHS = (
     "15jTsnN6cYIf2KBcJ85Km_xH2pjH8HILN",
+    #"1GClR5KLOsYAgYSS3iKP1k6-qcynR7d7g", # Full features..
     FEATURES_FOLDER / "gif_id_to_feature.csv",
 )  # 1k sample
 
