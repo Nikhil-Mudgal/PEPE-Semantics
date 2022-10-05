@@ -39,12 +39,14 @@ INDEX_DIR = INDICES_FOLDER / "pepe_index"
 print(INDEX_DIR)
 
 INDEX_FILE_PATHS = (
-    "index",
+    #"index", # 1k sample
+    "full-index",
     INDEX_DIR / "index"
 )
 
 PKL_FILE_PATHS = (
-    "giphy_ids.pkl",
+    #"giphy_ids.pkl", # 1k sample
+    "full-giphy_ids.pkl",
     INDEX_DIR / "giphy_ids.pkl"
 )
 
