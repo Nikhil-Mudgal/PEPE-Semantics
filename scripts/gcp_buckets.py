@@ -11,7 +11,8 @@ def upload_blob(bucket_name, source_file_name, destination_blob_name):
     # destination_blob_name = "storage-object-name"
 
     #storage_client = storage.Client()
-    storage_client = storage.Client.from_service_account_json("../keys.json")
+    #storage_client = storage.Client.from_service_account_json("../keys.json")
+    storage_client = storage.Client.from_service_account_json("/app/keys.json")
     bucket = storage_client.bucket(bucket_name)
     blob = bucket.blob(destination_blob_name)
 
