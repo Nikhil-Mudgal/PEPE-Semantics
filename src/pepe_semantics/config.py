@@ -26,11 +26,6 @@ GIF_ID_TO_INFERRED_FEATURE_PATHS = (
     FEATURES_FOLDER / "gif_id_to_feature.csv",
 )  # 1k sample
 
-GIF_ID_TO_INFERRED_FEATURE_PATHS_FULL = (
-    "1GClR5KLOsYAgYSS3iKP1k6-qcynR7d7g",
-    FEATURES_FOLDER / "full_gif_id_to_feature.csv",
-)
-
 # GIF_ID_TO_INFERRED_FEATURE_PATHS = \
 # "1GClR5KLOsYAgYSS3iKP1k6-qcynR7d7g", FEATURES_FOLDER/"gif_id_to_feature.csv"  # full 115K dataset
 GIF_ID_TO_GIPHY_ID_PATHS = (
@@ -42,3 +37,14 @@ GIF_ID_TO_GIPHY_ID_PATHS = (
 # WHERE TO SAVE OUR BUILT INDEX
 INDEX_DIR = INDICES_FOLDER / "pepe_index"
 print(INDEX_DIR)
+
+INDEX_FILE_PATHS = (
+    "index",
+    INDEX_DIR / "index"
+)
+
+PKL_FILE_PATHS = (
+    "giphy_ids.pkl",
+    INDEX_DIR / "giphy_ids.pkl"
+)
+
