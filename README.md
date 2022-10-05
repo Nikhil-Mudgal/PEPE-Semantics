@@ -80,6 +80,7 @@ For more information for how this setup came to be, see:
 
 [YouTube video](https://www.youtube.com/watch?v=FPFDg5znLTM&list=PLY91jl6VVD7wLP84OUgmjGSUBbem92KHk&index=3&ab_channel=FedericoTartarini)
 
+
 ### Continuous Deployment
 
 To implement Continuous Deployment in GCP we can use GitHub actions to trigger a similar set of commands as the ones above but managed by a GitHub instance.
