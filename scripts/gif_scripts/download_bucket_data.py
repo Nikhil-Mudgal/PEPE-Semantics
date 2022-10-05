@@ -26,7 +26,7 @@ def download_blob(bucket_name, source_blob_name, destination_file_name):
 def main():
     for blob, save_fpath in _GIDS_PATHS:
         save_fpath.resolve().parent.mkdir(exist_ok=True, parents=True)
-        download_blob(bucket_name="pepe-semantics-artif", 
+        download_blob(bucket_name="pepe_artifacts", 
                       source_blob_name = blob,
                       destination_file_name = str(save_fpath))
 
