@@ -14,8 +14,9 @@ COPY . ./
 
 # Install production dependencies.
 RUN pip -qq install .   
-RUN python scripts/gif_scripts/download_data.py
-RUN python scripts/gif_scripts/build_indices.py
+#RUN python scripts/gif_scripts/download_data.py
+RUN python scripts/gif_scripts/download_bucket_data.py
+#RUN python scripts/gif_scripts/build_indices.py
 
 #RUN pip install -r requirements.txt
 RUN pip install gunicorn
