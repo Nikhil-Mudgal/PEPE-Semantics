@@ -86,3 +86,4 @@ class GetImageData:  # Slower method
             filename = path / f"{urls[idx].split('/')[-1]}"
             with open(filename, "wb") as f:
                 f.write(r.content)
+ # this is not bring used

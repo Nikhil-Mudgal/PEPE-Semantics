@@ -3,10 +3,10 @@ name: Deploy to Cloud Run
 on:
   push:
     branches:
-      - main
+      - dev
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-  APP_ID: pepe-semantics-prod
+  APP_ID: pepe-semantics
   RUN_REGION: us-central1
   SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
 jobs:
