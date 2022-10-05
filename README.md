@@ -4,7 +4,7 @@ PEPE-Sematics is the productionized version of the PEPE-Model by [Xingyao Wang](
 
 ## Getting Started
 
-To make it easy to get started, a list of recommended next steps 
+To make it easy to get started, a list of recommended next steps.
 
 ### Setup 
 
