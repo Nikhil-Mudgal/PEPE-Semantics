@@ -12,8 +12,8 @@ _GIDS_PATHS = (
 
 def download_blob(bucket_name, source_blob_name, destination_file_name):
     """Downloads a blob from the bucket."""
-    #storage_client = storage.Client()
-    storage_client = storage.Client.from_service_account_json("/app/keys.json")
+    storage_client = storage.Client()
+    #storage_client = storage.Client.from_service_account_json("/app/keys.json")
 
     bucket = storage_client.bucket(bucket_name)
 
