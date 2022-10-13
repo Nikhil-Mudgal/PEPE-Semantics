@@ -196,5 +196,4 @@ with gr.Blocks(css=css_bg_img) as demo:
         None,
     )
 
-demo.launch(debug=False)
-
+demo.launch(server_name="0.0.0.0", server_port=8080)
