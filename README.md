@@ -42,9 +42,8 @@ To do..
 Reach out to us at:-
 
 * [Brendon]
-* [Job]
+* [Job](https://github.com/jobquiroz)
 * [Nikhil-Mudgal](https://github.com/Nikhil-Mudgal) -- nmudgal1106@gmail.com
-* [Parth]
-* [Renat]
+* [Renat](https://github.com/u-brixton)
 
 
