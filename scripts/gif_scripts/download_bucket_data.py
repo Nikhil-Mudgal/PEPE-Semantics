@@ -12,8 +12,9 @@ _GIDS_PATHS = (
 
 def download_blob(bucket_name, source_blob_name, destination_file_name):
     """Downloads a blob from the bucket."""
-    storage_client = storage.Client()
-    #storage_client = storage.Client.from_service_account_json("/app/keys.json")
+    # storage_client = storage.Client()
+    # storage_client = storage.Client.from_service_account_json("/app/smooth-calling-362915-d3b65f370c6b.json")
+    storage_client = storage.Client.from_service_account_json("smooth-calling-362915-d3b65f370c6b.json")
 
     bucket = storage_client.bucket(bucket_name)
 
@@ -24,7 +25,7 @@ def download_blob(bucket_name, source_blob_name, destination_file_name):
 
 
 def main():
-    for blob, save_fpath in _GIDS_PATHS:
+    for blob, save_fpath, _ in _GIDS_PATHS:
         save_fpath.resolve().parent.mkdir(exist_ok=True, parents=True)
         download_blob(bucket_name="pepe_artifacts", 
                       source_blob_name = blob,
