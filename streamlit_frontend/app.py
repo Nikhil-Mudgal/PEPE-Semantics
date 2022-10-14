@@ -31,18 +31,18 @@ css_bg_img = ".gradio-container {background-image: url('file=https://wallpaperac
 
 with gr.Blocks(css=css_bg_img) as demo:
     gr.Markdown(
-        """<h1 style='text-align: center;'><span style="background-color:white;">PEPE-Sematics</span></h1>"""
+        """<h1 style='text-align: center;color:white'>PEPE-Sematics</h1>"""
     )
     gr.Markdown(
         """
-        <p style="text-align:center;background-color: #FFFFFF" ><b>The world of GIFs needs saviour. While it has initially thrived on the legacy
+        <p style="text-align:center;color: #FFFFFF" ><b>The world of GIFs needs saviour. While it has initially thrived on the legacy
         of a few GIFs, the Gifverse is becoming chaotic and it is becoming very difficult to find good Gifs. 
         Swoops in PEPE-Sematic to help those in need.<b></p>
 
         <center>
             <iframe src="https://giphy.com/embed/rBSB0tULImCv9DJi1P" width="480" height="361" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></p>
         </center>
-        <p style="text-align:center;background-color: #FFFFFF"> PEPE-Sematics adopts from the <a href="https://github.com/xingyaoww/gif-reply" style='color:blue'>PEPE model</a>
+        <p style="text-align:center;color: #FFFFFF"> PEPE-Sematics adopts from the <a href="https://github.com/xingyaoww/gif-reply" style='color:blue'>PEPE model</a>
         and uses MLOps to bring it to your browser. PEPE-Sematics present to you multiple recommendations to choose from.
         As fellow Giffer's we know it is never enough unless you spam your bae or friend or an annoying colleague, thus multiple 
         recommedations is the only way to go about it. To ease your confusion we also provide a top recommendation based on our 
@@ -51,7 +51,7 @@ with gr.Blocks(css=css_bg_img) as demo:
     )
 
     gr.Markdown(
-        """<center><h2><span style="background-color:white;">Test it out</span></h2><center>"""
+        """<center><h2 'color:white'>Test it out</h2><center>"""
     )
 
     text_input = gr.Textbox(
@@ -62,7 +62,7 @@ with gr.Blocks(css=css_bg_img) as demo:
 
     with gr.Row():
         gr.Markdown(
-            """<center><h2><span style="background-color:white;">Top Recommedation</span></h2><center>"""
+            """<center><h2 'color:white'>Top Recommedation</h2><center>"""
         )
     with gr.Row():
         image0 = gr.Markdown(
@@ -73,7 +73,7 @@ with gr.Blocks(css=css_bg_img) as demo:
             image0_down = gr.Button("\N{thumbs down sign}")
             image0_flag = gr.Button("Flag")
     gr.Markdown(
-        """<center><h2><span style="background-color:white;">Recommended GIFs</span></h2><center>"""
+        """<center><h2 'color:white'>Recommended GIFs</h2><center>"""
     )
     with gr.Row():
         with gr.Column(scale=1, min_width=300):
