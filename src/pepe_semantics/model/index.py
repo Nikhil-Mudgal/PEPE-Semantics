@@ -5,8 +5,9 @@ from pathlib import Path
 
 import faiss
 import numpy as np
+from tqdm import tqdm
 
-_INDEX_FNAME = "index"
+_INDEX_FNAME = "index_hnsw"
 _GIPHY_IDS_FNAME = "giphy_ids.pkl"
 
 class GIFIndex:
@@ -21,10 +22,12 @@ class GIFIndex:
         # TODO: save some unique id of the encoding model
 
     def _create_index(self, embeddings):
+        print("Building index..")
         emb_dim = embeddings.shape[1]
-        # TODO: can add optimizations like HNSW search here
-        self._index = faiss.IndexFlatIP(emb_dim)
+        # self._index = faiss.IndexFlatIP(emb_dim)
+        self._index = faiss.IndexHNSWFlat(emb_dim, 32, faiss.METRIC_INNER_PRODUCT)
         self._index.add(embeddings.astype("float32"))
+        print("Index sucessfully built")
 
     def _get_nearest_ids(self, text_embedding, k=5):
         # TODO: pre-check if already unsqueezed
@@ -60,10 +63,12 @@ class GIFIndex:
     @classmethod
     def from_csv(cls, csv_features_fpath, gif_ids_mapping_fpath):
         # TODO: resave all ids with only giphy ids in a single file
+        print("Parsing embeddings from csv file..")
         gif_ids, embeddings = zip(*[el for el in read_csv_file(csv_features_fpath)])
-        embeddings = np.array([literal_eval(emb) for emb in embeddings])
+        embeddings = np.array([literal_eval(emb) for emb in tqdm(embeddings)])
         gif_to_giphy_ids = read_gif_to_giphy_ids(gif_ids_mapping_fpath)
         giphy_ids = [gif_to_giphy_ids[gif_id] for gif_id in gif_ids]
+        print("CSV file parsed")
         return cls(giphy_ids=giphy_ids, embeddings=embeddings)
 
 

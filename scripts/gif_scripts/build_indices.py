@@ -5,7 +5,6 @@ from pepe_semantics.model.index import GIFIndex
 def main():
     index = GIFIndex.from_csv(
         csv_features_fpath=config.GIF_ID_TO_INFERRED_FEATURE_PATHS[1],
-        #csv_features_fpath=config.GIF_ID_TO_INFERRED_FEATURE_PATHS_FULL[1],
         gif_ids_mapping_fpath=config.GIF_ID_TO_GIPHY_ID_PATHS[1],
     )
     index.save(config.INDEX_DIR)
